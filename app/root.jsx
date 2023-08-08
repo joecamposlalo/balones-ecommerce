@@ -17,7 +17,7 @@ import {Layout} from '~/components';
 import {seoPayload} from '~/lib/seo.server';
 
 import favicon from '../public/favicon.svg';
-import manifest from '../public/resources/site.webmanifest';
+// import manifest from '../public/resources/site.webmanifest';
 import {GenericError} from './components/GenericError';
 import {NotFound} from './components/NotFound';
 import styles from './styles/app.css';
@@ -37,7 +37,7 @@ export const links = () => {
       href: 'https://shop.app',
     },
     {rel: 'icon', type: 'image/svg+xml', href: favicon},
-    {rel: 'manifest', href: manifest, type: 'application/manifest+json'},
+    {rel: 'manifest', href: "https://cdn.shopify.com/s/files/1/0808/5189/4594/files/site.webmanifest?v=1691469102", type: 'application/manifest+json'},
   ];
 };
 
