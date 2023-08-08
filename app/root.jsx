@@ -17,12 +17,13 @@ import {Layout} from '~/components';
 import {seoPayload} from '~/lib/seo.server';
 
 import favicon from '../public/favicon.svg';
-
+import manifest from '../public/resources/site.webmanifest';
 import {GenericError} from './components/GenericError';
 import {NotFound} from './components/NotFound';
 import styles from './styles/app.css';
 import {DEFAULT_LOCALE, parseMenu} from './lib/utils';
 import {useAnalytics} from './hooks/useAnalytics';
+
 
 export const links = () => {
   return [
@@ -36,6 +37,7 @@ export const links = () => {
       href: 'https://shop.app',
     },
     {rel: 'icon', type: 'image/svg+xml', href: favicon},
+    {rel: 'manifest', href: manifest, type: 'application/manifest+json'},
   ];
 };
 
@@ -73,6 +75,7 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+
         <Seo />
         <Meta />
         <Links />
@@ -86,6 +89,33 @@ export default function App() {
         </Layout>
         <ScrollRestoration />
         <Scripts />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function () {
+                navigator.serviceWorker
+                  .register('/service-worker.js')
+                  .then(
+                    function (registration) {
+                      console.log(
+                        'ServiceWorker registration successful with scope: ',
+                        registration.scope,
+                      );
+                    },
+                    function (err) {
+                      console.log('ServiceWorker registration failed: ', err);
+                    },
+                  )
+                  .catch(function (err) {
+                    console.log(err);
+                  });
+              });
+            } else {
+              console.log('service worker is not supported');
+            }`,
+          }}
+        />
       </body>
     </html>
   );
