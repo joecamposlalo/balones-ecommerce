@@ -3,19 +3,19 @@
   "name": "Mi Aplicación PWA",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "https://balones-ecommerce-471f3c08e46b6dccb3c0.o2.myshopify.dev/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "https://balones-ecommerce-471f3c08e46b6dccb3c0.o2.myshopify.dev/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "https://balones-ecommerce-471f3c08e46b6dccb3c0.o2.myshopify.dev/",
+  "start_url": "https://balones-ecommerce-471f3c08e46b6dccb3c0.o2.myshopify.dev",
   "background_color": "#3367D6",
   "display": "standalone",
-  "scope": "https://balones-ecommerce-471f3c08e46b6dccb3c0.o2.myshopify.dev/",
+  "scope": "https://balones-ecommerce-471f3c08e46b6dccb3c0.o2.myshopify.dev",
   "theme_color": "#3367D6"
 }
