@@ -39,6 +39,7 @@ export function FeaturedProducts({
 
   useEffect(() => {
     load(productsApiPath);
+    console.log(data)
   }, [load, productsApiPath]);
 
   return (
