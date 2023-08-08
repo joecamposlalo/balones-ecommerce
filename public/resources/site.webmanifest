@@ -16,6 +16,6 @@
   "start_url": "https://balones-ecommerce-471f3c08e46b6dccb3c0.o2.myshopify.dev/",
   "background_color": "#3367D6",
   "display": "standalone",
-  "scope": "/",
+  "scope": "https://balones-ecommerce-471f3c08e46b6dccb3c0.o2.myshopify.dev/",
   "theme_color": "#3367D6"
 }
